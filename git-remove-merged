@@ -1,0 +1,5 @@
+#!/bin/sh
+
+git branch --merged develop --no-color |
+  grep -Ev '(master|develop)$' |
+  xargs git branch -d
