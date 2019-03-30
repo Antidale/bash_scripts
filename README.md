@@ -17,8 +17,24 @@ Usage notes:
 
 ## github-new-repo
 
+This script will:
+
+* create a new remote repository in GitHub
+* initialize a new git repository in the current directory
+* add the remote repository as origin (ssh, not https syntax)
+* create develop and main branches
+* add a basic README.md
+* set develop as the default branch in github
+* set develop as the active local branch
+
 ### Requirements
-This requires you to have generated a personal access token, and have it saved as an environment variable called GITHUB_ACCESS_TOKEN
+This requires following environment variables:
+* GITHUB_ACCESS_TOKEN
+* GITHUB_USERNAME
+
+You also must pass the new name as an argument to the function.  See below for an example
+
+Visit [here](https://github.com/settings/tokens) to generate an access token.  See [this](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) for official documentation.
 
 ### Usage Example
 `github-new-repo MyNewRepoName`
