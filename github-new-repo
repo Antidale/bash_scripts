@@ -31,3 +31,6 @@ git push -u origin develop
 # create and push a main branch, too
 git checkout -b main
 git push -u origin main
+
+#leave the user in develop
+git checkout develop
