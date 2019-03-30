@@ -1,10 +1,33 @@
 #!/bin/sh
 
 if [[ -z $1 ]] ;
-	then echo 'must supply a new repoistory name'
+	then echo 'must supply a new repository name'
 	exit 1
+fi
 
+if [[ -z $GITHUB_ACCESS_TOKEN ]] ;
+	then echo 'Expected environment variable $GITHUB_ACCESS_TOKEN'
+	exit 1
+fi
+
+if [[ -z $GITHUB_USERNAME ]] ;
+	then echo 'Expected environment variable $GITHUB_USERNAME'
+	exit 1
 fi
 
 curl -H "Authorization: token $GITHUB_ACCESS_TOKEN" https://api.github.com/user/repos -d "{\"name\": \"$1\"}"
 
+echo $1 >> README.md
+
+git init
+git remote add origin git@github.com:$GITHUB_USERNAME/$1.git
+
+# create develop, add the readme, push. This sets develop as the main branch
+git checkout -b develop
+git add README.md
+git commit -m "creating develop branch for $1"
+git push -u origin develop
+
+# create and push a main branch, too
+git checkout -b main
+git push -u origin main
