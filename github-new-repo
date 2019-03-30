@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [[ -z $1 ]] ;
+	then echo 'must supply a new repoistory name'
+	exit 1
+
+fi
+
+curl -H "Authorization: token $GITHUB_ACCESS_TOKEN" https://api.github.com/user/repos -d "{\"name\": \"$1\"}"
+
