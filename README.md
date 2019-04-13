@@ -15,7 +15,7 @@ Usage notes:
 * the script uses `git branch -d` for the local deletion, which also checks to see if the branch being deleted is fully incorporated in the *current* branch before deleting. It works best if you're executing while in the develop branch.
 * If you have merged into develop via squash commit or a rebase, you've changed history, so the commit sha from the branch is different from what's in the develop, and therefore that branch won't be deleted by the script
 
-## github-new-repo
+## git-new-repo
 
 This script will:
 
@@ -37,4 +37,4 @@ You also must pass the new name as an argument to the function.  See below for a
 Visit [here](https://github.com/settings/tokens) to generate an access token.  See [this](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) for official documentation.
 
 ### Usage Example
-`github-new-repo MyNewRepoName`
+`git new-repo MyNewRepoName`
