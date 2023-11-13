@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [[ -z $SOURCE_FOLDER ]] ;
+	then echo 'Expected environment variable $SOURCE_FOLDER'
+	exit 1
+fi
+currentDir=$(pwd)
+
+cd $SOURCE_FOLDER
+
+for d in */; do
+    echo "fetching $d"
+    cd $d
+    git fetch -pt --all
+    cd ..
+done 
+
+cd $currentDir
