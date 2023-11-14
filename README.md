@@ -1,5 +1,5 @@
 # bash_scripts
-A small collection of bash scripts. To use them, make sure to add this directory to your PATH.
+A small collection of bash scripts. To use them, make sure to add this directory to your PATH and add the execute permission for youself on the scrips. For example `chmod u+x git-*` will give only the owner of the file permission to exectute files matching `git-`.
 
 ## git-remove-merged
 
@@ -38,3 +38,15 @@ Visit [here](https://github.com/settings/tokens) to generate an access token.  S
 
 ### Usage Example
 `git new-repo MyNewRepoName`
+
+
+## git-fetch-all
+
+This script will iterate through the first level child directories of a directory and use `git fetch -pt --all` to fetch and prune code for all branches, as well as fetching and pruning tags.  Set the chosen directory by using the SOURCE_FOLDER environment variable
+
+### Requirements
+This requires following environment variable:
+* SOURCE_FOLDER
+
+### Usage Example
+git fetch-all
