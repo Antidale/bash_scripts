@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [[ -z $1 ]] ;
+	then echo 'must add some note to add to scratchpad.md'
+	exit 1
+fi
+
+if [[ -z $OBSIDIAN_VAULT/ ]] ;
+	then echo 'Expected environment variable $OBSIDIAN_VALUT'
+	exit 1
+fi
+
+echo $(date +%y-%m-%d) $(date +%H:%M): $@ >> $OBSIDIAN_VALUT/scratchpad.md

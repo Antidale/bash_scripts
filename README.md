@@ -50,3 +50,13 @@ This requires following environment variable:
 
 ### Usage Example
 git fetch-all
+
+## scratchpad
+This script adds the entered text to the scratchpad.md file at the configured OBSIDIAN_VAULT folder. If the file does not exist, it will be created. The text has the current date/time (yyyy-mm-dd HH:MM) prepended to it.
+
+It is meant to be a quick way to add a stray link/thought/etc to a your Obsidian vault to organize later.
+
+### Requirements
+This requires the following environment variable:
+* OBSIDIAN_VAULT
+
