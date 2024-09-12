@@ -42,7 +42,7 @@ Visit [here](https://github.com/settings/tokens) to generate an access token.  S
 
 ## git-fetch-all
 
-This script will iterate through the first level child directories of a directory and use `git fetch -pt --all` to fetch and prune code for all branches, as well as fetching and pruning tags.  Set the chosen directory by using the SOURCE_FOLDER environment variable
+This script will iterate through the first and second level child directories of the `SOURCE_FOLDER` and use `git fetch -pt --all` to fetch and prune code for all branches, as well as fetching and pruning tags. Set the chosen directory by using the SOURCE_FOLDER environment variable. The command will now only attempt to fetch in directories that are git repositories.
 
 ### Requirements
 This requires following environment variable:
@@ -59,4 +59,10 @@ It is meant to be a quick way to add a stray link/thought/etc to a your Obsidian
 ### Requirements
 This requires the following environment variable:
 * OBSIDIAN_VAULT
+
+## get-streams
+A shell script that resembles the `.bat` file Simbu9 made for FE Restreams.
+
+### Requirements
+Assumes that you have [Streamlink](https://github.com/streamlink/streamlink) installed and configured
 

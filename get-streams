@@ -1,0 +1,7 @@
+#!/bin/sh
+echo 'Enter runner names'
+read runners
+
+for runner in $runners ;
+    do streamlink https://www.twitch.tv/$runner best --twitch-disable-ads &
+done
