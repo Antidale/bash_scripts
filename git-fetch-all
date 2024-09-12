@@ -9,10 +9,27 @@ currentDir=$(pwd)
 cd $SOURCE_FOLDER
 
 for d in */; do
-    echo "fetching $d"
     cd $d
-    git fetch -pt --all
-    cd ..
-done 
+    if git rev-parse --is-inside-work-tree > /dev/null 2>&1;
+    then
+        echo "fetching $d"
+        git fetch -pt --all
+        cd ..
+    else
+        for sd in */; do
+            cd $sd
+            if git rev-parse --is-inside-work-tree > /dev/null 2>&1;
+            then
+                echo "fetching $sd"
+                git fetch -pt --all
+                cd ..
+            else
+                echo "$sd is not a git directory."
+                cd ..
+            fi
+        done
+        cd ..
+    fi
+done
 
 cd $currentDir
