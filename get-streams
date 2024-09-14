@@ -1,7 +1,19 @@
 #!/bin/sh
-echo 'Enter runner names'
-read runners
+launchStream() {
+    streamlink https://www.twitch.tv/$1 best --twitch-disable-ads &
+}
 
-for runner in $runners ;
-    do streamlink https://www.twitch.tv/$runner best --twitch-disable-ads &
-done
+if [[ -z "$@" ]] ;
+    then 
+        echo 'Enter runner names'
+        read runners
+
+        for runner in $runners ;
+            do launchStream $runner
+        done
+    else
+        for runner in "$@" ;
+            do launchStream $runner
+        done
+fi
+
