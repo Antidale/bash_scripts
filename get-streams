@@ -1,6 +1,6 @@
 #!/bin/sh
 launchStream() {
-    streamlink https://www.twitch.tv/$1 best --twitch-disable-ads &
+    streamlink https://www.twitch.tv/$1 --twitch-disable-ads &
 }
 
 if [[ -z "$@" ]] ;
