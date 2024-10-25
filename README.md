@@ -66,3 +66,5 @@ A shell script that resembles the `.bat` file Simbu9 made for FE Restreams.
 ### Requirements
 Assumes that you have [Streamlink](https://github.com/streamlink/streamlink) installed and configured
 
+## rider
+A shell script to open rider from the command line. just using `rider` and not passing anything else will open the general "open a solution" selector. Passing in a directory will open the directory, and passing in a file path will open that file, which is very nice when opening a solution file.

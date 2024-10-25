@@ -20,7 +20,7 @@ for d in */; do
             cd $sd
             if git rev-parse --is-inside-work-tree > /dev/null 2>&1;
             then
-                echo "fetching $sd"
+                echo "fetching $d$sd"
                 git fetch -pt --all
                 cd ..
             else
