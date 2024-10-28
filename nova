@@ -1,4 +1,3 @@
 #!/bin/sh
 
 SwitchAudioSource -s "Arctis Nova Pro Wireless"
-exit
