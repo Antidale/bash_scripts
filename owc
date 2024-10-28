@@ -1,0 +1,3 @@
+#!/bin/sh
+SwitchAudioSource -s "OWC Thunderbolt 3 Audio Device"
+exit 
