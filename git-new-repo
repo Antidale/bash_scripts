@@ -22,15 +22,6 @@ echo $1 >> README.md
 git init
 git remote add origin git@github.com:$GITHUB_USERNAME/$1.git
 
-# create develop, add the readme, push. This sets develop as the main branch
-git checkout -b develop
 git add README.md
-git commit -m "creating develop branch for $1"
-git push -u origin develop
-
-# create and push a main branch, too
-git checkout -b main
+git commit -m "create README.md for $1"
 git push -u origin main
-
-#leave the user in develop
-git checkout develop

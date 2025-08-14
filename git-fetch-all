@@ -16,6 +16,7 @@ for d in */; do
         git fetch -pt --all
         cd ..
     else
+        #fix this to better handle folders that have no subfolders!
         for sd in */; do
             cd $sd
             if git rev-parse --is-inside-work-tree > /dev/null 2>&1;
