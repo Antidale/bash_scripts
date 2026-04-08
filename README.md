@@ -71,3 +71,8 @@ A shell script to open rider from the command line. just using `rider` and not p
 
 ## nova & owc
 Shell scripts to change audio source. Requires `switchaudio-osx` to be installed. Gotten from Homebrew
+
+## Parse-Sts2History
+A powershell script to read all the completed run files and output a short summary. Two parameter options are available
+- `-profileName`: this defaults to "profile1". If you use a different profile, make sure to send in that value
+- `-minAscension`: this defaults to zero. pass in a number 10 or less to only see ascensions of that value up to 10. For instance, if you want to see ascensions 5 and up, invoke the script with `./Parse-Sts2History -minAscension 5
