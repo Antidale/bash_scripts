@@ -91,7 +91,7 @@ $(foreach ($file in $relevantFiles) {
     } ) | Export-Csv -Path $savedRuns.Path -Append -NoTypeInformation
 
 Import-Csv -Path $savedRuns.Path  | Where-Object { $_.Ascension -in $desiredAscenions } | Group-Object -Property Ascension, Character, Result -NoElement | ForEach-Object {
-    $summary = $_.Name.Replace(" ", "").Split(",")
+    $summary = $_.Name -split ", "
     [PSCustomObject]@{
         Character = $summary[1]
         Ascension = [int]$summary[0]
