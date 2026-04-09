@@ -79,3 +79,18 @@ A powershell script to read all the completed run files and output a short summa
 Beyond those parameters, you will need to find the correct folder for your steam account and update the script with that value. 
 
 This process does write a .csv that will be in `%userprofile%\AppData\Roaming\com.antidale.sts2data` on windows or `~/Library/Application Support/com.antidale.sts2data` on macOS. Linux people really should do something in nushell, python, ruby, or something like that
+
+## Parse-Sts2MultiHistory
+Very similar to the above, but stores the parsed data in a different .csv file, and concatenates all the characters in the run. The output looks like:
+
+| **Ascension** | **Result** | **Character**                                  | **Count** |
+| ---------: |  :------: | ---------                                 | -----: |
+|       10 | Loss   | Necrobinder, Ironclad, Defect                  | 1 |
+|       10 | Loss   | Regent, Necrobinder, Ironclad                  | 1 |
+|       10 | Win    | Defect, Defect, Ironclad                       | 1 |
+|       10 | Win    | Ironclad, Silent, Ironclad                     | 1 |
+|       10 | Win    | Necrobinder, Necrobinder, Silent, Necrobinder   | 1 |
+|       10 | Win    | Necrobinder, Regent, Ironclad                  | 1 |
+|       10 | Win    | Regent, Necrobinder, Necrobinder               | 1 |
+|       10 | Win    | Regent, Necrobinder, Regent, Ironclad           | 1 |
+|       10 | Win    | Silent, Defect, Defect                         | 1 |
