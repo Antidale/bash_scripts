@@ -76,3 +76,6 @@ Shell scripts to change audio source. Requires `switchaudio-osx` to be installed
 A powershell script to read all the completed run files and output a short summary. Two parameter options are available
 - `-profileName`: this defaults to "profile1". If you use a different profile, make sure to send in that value
 - `-minAscension`: this defaults to zero. pass in a number 10 or less to only see ascensions of that value up to 10. For instance, if you want to see ascensions 5 and up, invoke the script with `./Parse-Sts2History -minAscension 5`
+Beyond those parameters, you will need to find the correct folder for your steam account and update the script with that value. 
+
+This process does write a .csv that will be in `%userprofile%\AppData\Roaming\com.antidale.sts2data` on windows or `~/Library/Application Support/com.antidale.sts2data` on macOS. Linux people really should do something in nushell, python, ruby, or something like that
