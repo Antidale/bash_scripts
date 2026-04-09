@@ -74,7 +74,9 @@ $(foreach ($file in $relevantFiles) {
         $json = Get-Content -Path $file.FullName | ConvertFrom-Json | Where-Object { $_.players.Count -gt 1 } | Select-Object ascension, win, build_id -ExpandProperty players | Select-Object -Property ascension, character, win, relics, build_id
         
         if ($json) {
-            $characters = $(foreach ($c in $json.character) { (Get-Culture).TextInfo.ToTitleCase($c.Replace('CHARACTER.', '').ToLower()) }) -join ',' | Sort-Object
+            $characters = $(foreach ($c in $json.character) { (Get-Culture).TextInfo.ToTitleCase($c.Replace('CHARACTER.', '').ToLower()) }) | Sort-Object
+
+            $characters = $characters -join ","
             $win = $json.win -contains $true
 
             [PSCustomObject] @{
