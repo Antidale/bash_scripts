@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
+set currentDir (pwd)
 
+cd ~/src/bash_scripts
 if test (prompt_hostname) = "sergyar"
     if test (pactl get-default-sink) = 'alsa_output.usb-Other_World_Computing_OWC_Thunderbolt_3_Audio_Device-00.analog-stereo'
         ./bnova
@@ -7,10 +9,19 @@ if test (prompt_hostname) = "sergyar"
         ./bowc
     end
 else
-    echo "swap audio not configured for devera yet"
-    # if test (SwitchAudioSource -c  = '')
-        # ./nova
-    # else
-        # ./owc
-    #end
+    if test (SwitchAudioSource -c) = 'OWC Thunderbolt 3 Audio Device'
+        ./nova
+    else if test (SwitchAudioSource -c) = 'Arctis Nova Pro Wireless'
+        ./owc
+    else 
+        if test (SwitchAudioSource -c) = 'MacBook Pro Speakers'
+            if test (SwitchAudioSource -a | grep 'OWC Thunderbold 3 Audio Device')
+                ./owc
+            else    
+                echo "not connected to expected audio outputs, not switching"
+            end
+        end
+    end
 end
+
+cd $currentDir

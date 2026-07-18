@@ -5,7 +5,7 @@ param(
 
 ### CHANGE THIS VALUE TO YOUR STEAM ID.
 # on windows that's at C:\Program Files (x86)\Steam\userdata\ and will be a folder there. If your account is the only one there, great! you're done looking, just copy that string of digits and overwrite the 0 below. If you share a computer with someone else who has a different account, I **think** there should be seperate folders, but don't actually know.
-$steamId = 0
+$steamId = 36517658
 
 $csvName = "STS2_Multi_Run_Summary.csv"
 $summaryCsvName = "STS2_Multi_Data_Summary.csv"
