@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "killing elden ring"
+echo $(ps aux | grep [e]ldenring.exe)
+kill $(ps aux | grep [e]ldenring.exe | awk '{print $2}')
+echo "YOU DIED"

@@ -1,0 +1,11 @@
+#!/usr/bin/env fish
+
+if test (prompt_hostname) = "sergyar"
+    if test (pactl get-default-sink) = 'alsa_output.usb-Other_World_Computing_OWC_Thunderbolt_3_Audio_Device-00.analog-stereo'
+        ./bnova
+    else 
+        ./bowc
+    end
+else
+    echo "swap audio not configured for devera yet"
+end
