@@ -1,0 +1,15 @@
+#!/usr/bin/env fish
+set audioSource (SwitchAudioSource -c)
+if test $audioSource = 'OWC Thunderbolt 3 Audio Device'
+    ./nova
+else if test $audioSource = 'Arctis Nova Pro Wireless'
+    ./owc
+else 
+    if test $audioSource = 'MacBook Pro Speakers'
+        if test (SwitchAudioSource -a | grep 'OWC Thunderbold 3 Audio Device')
+            ./owc
+        else    
+            echo "not connected to expected audio outputs, not switching"
+        end
+    end
+end
