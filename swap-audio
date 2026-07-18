@@ -8,4 +8,9 @@ if test (prompt_hostname) = "sergyar"
     end
 else
     echo "swap audio not configured for devera yet"
+    # if test (SwitchAudioSource -c  = '')
+        # ./nova
+    # else
+        # ./owc
+    #end
 end
